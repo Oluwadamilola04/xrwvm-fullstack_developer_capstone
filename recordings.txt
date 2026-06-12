@@ -554,3 +554,6 @@ curl -X GET "https:/
 []
 
 7.
+curl -X GET "https:/ianalyzer.2b0tds2
+/sentianalyzer.2b0tds20l2vx.us-south.codeengine.appdomain.cloud//analyze/Fantastic%20services" 
+{"sentiment": "positive"}
