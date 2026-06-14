@@ -119,13 +119,34 @@ docker compose up -d --build
 
 ### Node API
 
+Open the browser-friendly API index:
+
+```text
+http://localhost:3030/api/
+http://localhost:3000/api/
+```
+
+The first URL talks directly to the Express container. The second goes through the React/Nginx frontend proxy, so the API is visible from the same browser origin as the app.
+
 | Method | Endpoint | Purpose |
 | --- | --- | --- |
+| GET | `/api/` | API index with clickable endpoint links |
+| GET | `/api/health` | API health check |
 | GET | `/fetchDealers` | Get all dealers |
 | GET | `/fetchDealers/:state` | Get dealers by state |
 | GET | `/fetchDealer/:id` | Get dealer by ID |
+| GET | `/fetchReviews` | Get all reviews |
 | GET | `/fetchReviews/dealer/:id` | Get reviews by dealer |
 | POST | `/insert_review` | Insert review |
+
+Examples to paste directly into the browser address bar:
+
+```text
+http://localhost:3030/api/fetchDealers
+http://localhost:3030/api/fetchDealers/Texas
+http://localhost:3030/api/fetchDealer/1
+http://localhost:3030/api/fetchReviews/dealer/1
+```
 
 ## Portfolio Notes
 
